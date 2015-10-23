@@ -1,8 +1,10 @@
-## Plugin on the making - please :star: it, watch it, and come back soon!
+[![Code Climate](https://codeclimate.com/github/theforeman/foreman_cockpit/badges/gpa.svg)](https://codeclimate.com/github/theforeman/foreman_cockpit)
+[![GPL License](https://img.shields.io/github/license/theforeman/foreman_cockpit.svg)](https://github.com/theforeman/foreman_cockpit/blob/master/LICENSE)
 
 # Foreman Cockpit
 
-Display console and journal of Cockpit-enabled hosts in Foreman
+Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://theforeman.org) hosts.
+![gif demoing cockpit components](http://i.imgur.com/RzdsR9b.gif)
 
 * Website: [theforeman.org](http://theforeman.org)
 * ServerFault tag: [Foreman](http://serverfault.com/questions/tagged/foreman)
@@ -13,14 +15,22 @@ Display console and journal of Cockpit-enabled hosts in Foreman
     * [foreman-users](https://groups.google.com/forum/?fromgroups#!forum/foreman-users)
     * [foreman-dev](https://groups.google.com/forum/?fromgroups#!forum/foreman-dev)
 
+## Features
+
+* Display Cockpit components (system, terminal, journal, etc...) for a host if Cockpit is enabled on the host.
+* Especially useful if the Foreman user does not have access to the host directly, but Foreman does.
+
 ## Installation
 
-See [How_to_Install_a_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Plugin)
-for how to install Foreman plugins
+#### Packages on the making - please :star: it, watch it, and install from source for the moment.
 
-## Contributing
+** TODO - Add to manual, package and release **
 
-Fork and send a Pull Request. Thanks!
+## Usage
+
+No configuration needed! Install the plugin and it will detect which of your hosts run Cockpit.
+
+As of now, [Cockpit](http://cockpit-project.org/running.html) only runs on Fedora, Arch, CentOS, RHEL and Ubuntu, so your host must be running - and associated in Foreman - with one of these operating systems.
 
 ## Copyright
 
