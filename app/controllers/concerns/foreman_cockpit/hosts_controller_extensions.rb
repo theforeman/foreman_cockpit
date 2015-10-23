@@ -1,29 +1,21 @@
 module ForemanCockpit
-  # Controller methods to display Cockpit components
+  # Controller methods to load Cockpit components
   module HostsControllerExtensions
     extend ActiveSupport::Concern
 
     included do
-      before_filter :find_resource
-      before_filter :cockpit_enabled?,
-                    :only => [:cockpit_console, :journal, :storage]
-      before_filter :allow_cockpit_iframe,
-                    :only => [:show, :cockpit_console, :journal, :storage]
+      before_filter :allow_cockpit_iframe, :only => :show
     end
 
-    def cockpit_console
-      @console = { :name => @host.name, :fqdn => @host.fqdn }
-      render 'foreman_cockpit/hosts/cockpit_console'
-    end
-
-    def journal
-      @console = { :name => @host.name, :fqdn => @host.fqdn }
-      render 'foreman_cockpit/hosts/journal'
-    end
-
-    def storage
-      @console = { :name => @host.name, :fqdn => @host.fqdn }
-      render 'foreman_cockpit/hosts/storage'
+    ForemanCockpit::COCKPIT_ACTIONS.each do |action|
+      define_method(action) do
+        # We can't add a before_filter :find_resource for Cockpit actions as
+        # it'll override the default find_resource filter.
+        find_resource
+        suburl = ForemanCockpit::COCKPIT_SUBURL[action.to_sym]
+        render :partial => 'foreman_cockpit/hosts/cockpit',
+               :locals => { :fqdn => @host.fqdn, :suburl => suburl }
+      end
     end
 
     private
@@ -34,15 +26,9 @@ module ForemanCockpit
              "frame-src 'self' http://#{@host.fqdn}:9090")
     end
 
-    def cockpit_enabled?
-      return true if @host.cockpit_enabled?
-      process_error(:redirect => :back,
-                    :error_msg => _('Cockpit is not enabled in this host'))
-    end
-
     def action_permission
       case params[:action]
-      when 'cockpit_console', 'journal', 'storage'
+      when *ForemanCockpit::COCKPIT_ACTIONS
         :console
       else
         super

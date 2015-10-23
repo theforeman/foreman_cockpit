@@ -4,7 +4,6 @@
 # Foreman Cockpit
 
 Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://theforeman.org) hosts.
-![gif demoing cockpit components](http://i.imgur.com/RzdsR9b.gif)
 
 * Website: [theforeman.org](http://theforeman.org)
 * ServerFault tag: [Foreman](http://serverfault.com/questions/tagged/foreman)
@@ -19,6 +18,8 @@ Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://th
 
 * Display Cockpit components (system, terminal, journal, etc...) for a host if Cockpit is enabled on the host.
 * Especially useful if the Foreman user does not have access to the host directly, but Foreman does.
+
+![gif demoing cockpit components](http://i.imgur.com/RzdsR9b.gif)
 
 ## Installation
 

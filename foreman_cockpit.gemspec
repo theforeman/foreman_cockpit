@@ -6,13 +6,13 @@ Gem::Specification.new do |s|
   s.name        = 'foreman_cockpit'
   s.version     = ForemanCockpit::VERSION
   s.date        = Date.today.to_s
-  s.authors     = ['Daniel Lobato']
+  s.authors     = ['Daniel Lobato Garcia']
   s.email       = ['me@daniellobato.me']
   s.homepage    = 'http://github.com/theforeman/foreman_cockpit'
-  s.summary     = "See your hosts' journal and console though Cockpit."
+  s.summary     = "Use your hosts' Cockpit in Foreman."
   s.description = <<-DESCRIPTION
-This plugin adds a tab to see your host's console and journal if they have
-Cockpit installed.
+This plugin adds a tab to see your host's Cockpit components, such as console,
+journal, networking.. if the host has Cockpit installed.
 DESCRIPTION
   s.licenses    = ['GPL-3']
 
@@ -20,5 +20,6 @@ DESCRIPTION
                 'README.md']
   s.test_files = Dir['test/**/*']
 
+  s.add_dependency 'deface'
   s.add_development_dependency 'rubocop'
 end

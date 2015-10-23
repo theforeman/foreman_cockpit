@@ -1,3 +1,5 @@
+require 'deface'
+
 module ForemanCockpit
   # This engine connects ForemanCockpit with Foreman core
   class Engine < ::Rails::Engine
@@ -6,6 +8,15 @@ module ForemanCockpit
     config.autoload_paths += Dir["#{config.root}/app/controllers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/helpers/concerns"]
     config.autoload_paths += Dir["#{config.root}/app/models/concerns"]
+
+    initializer 'foreman_cockpit.assets.precompile' do |app|
+      app.config.assets.precompile += %w(foreman_cockpit/load_partial.js)
+    end
+
+    initializer 'foreman_cockpit.configure_assets', :group => :assets do
+      SETTINGS[:foreman_cockpit] =
+        { :assets => { :precompile => ['foreman_cockpit/load_partial.js'] } }
+    end
 
     initializer('foreman_cockpit.register_plugin',
                 :after => :finisher_hook) do

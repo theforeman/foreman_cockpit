@@ -3,9 +3,9 @@ Rails.application.routes.draw do
     constraints(:id => /[^\/]+/) do
       resources :hosts, :only => [] do
         member do
-          get :cockpit_console
-          get :journal
-          get :storage
+          ForemanCockpit::COCKPIT_ACTIONS.each do |action|
+            get action
+          end
         end
       end
     end
