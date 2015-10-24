@@ -1,7 +1,7 @@
 [![Code Climate](https://codeclimate.com/github/theforeman/foreman_cockpit/badges/gpa.svg)](https://codeclimate.com/github/theforeman/foreman_cockpit)
 [![GPL License](https://img.shields.io/github/license/theforeman/foreman_cockpit.svg)](https://github.com/theforeman/foreman_cockpit/blob/master/LICENSE)
 
-# Foreman Cockpit
+# Foreman Cockpit :rocket:
 
 Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://theforeman.org) hosts.
 
@@ -25,7 +25,7 @@ Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://th
 
 #### Packages on the making - please :star: it, watch it, and install from source for the moment.
 
-** TODO - Add to manual, package and release **
+**TODO - Add to manual, package and release**
 
 ## Usage
 
