@@ -20,6 +20,6 @@ DESCRIPTION
                 'README.md']
   s.test_files = Dir['test/**/*']
 
-  s.add_dependency 'deface'
+  s.add_dependency 'deface', '< 2.0'
   s.add_development_dependency 'rubocop'
 end
