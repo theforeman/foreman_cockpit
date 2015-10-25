@@ -1,0 +1,12 @@
+2015-10-23	Daniel Lobato <elobatocs@gmail.com>
+	* Add all Cockpit components
+	* Update README with current functionality
+
+2015-10-22	Daniel Lobato <elobatocs@gmail.com>
+	* Cockpit in Host#show navbar
+	* Fix rubocop warnings
+	* Initial foreman_cockpit structure
+
+2015-10-22	Daniel Lobato García <elobatocs@gmail.com>
+	* Initial commit
+
