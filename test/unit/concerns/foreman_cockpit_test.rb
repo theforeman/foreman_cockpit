@@ -17,7 +17,7 @@ class CockpitTest < ActiveSupport::TestCase
     end
 
     test 'cockpit is enabled if cockpit ping is successful' do
-      @dummy_host.stubs(:fqdn).returns('http://foo.bar')
+      @dummy_host.stubs(:fqdn).returns('foo.bar')
       cockpit_ping_url = "#{@dummy_host.fqdn}:9090/ping"
       RestClient.expects(:get).with(cockpit_ping_url).
         returns('{"service": "cockpit"}')
@@ -32,13 +32,13 @@ class CockpitTest < ActiveSupport::TestCase
 
   test 'cockpit is not displayed when host does not have an OS' do
     @dummy_host.stubs(:os).returns(nil)
-    @dummy_host.stubs(:fqdn).returns('http://foo.bar')
+    @dummy_host.stubs(:fqdn).returns('foo.bar')
     refute @dummy_host.cockpit_enabled?
   end
 
   test 'cockpit is not displayed for incompatible OSs' do
     @dummy_host.stubs(:os).returns(OpenStruct.new(:type => 'Debian'))
-    @dummy_host.stubs(:fqdn).returns('http://foo.bar')
+    @dummy_host.stubs(:fqdn).returns('foo.bar')
     refute @dummy_host.cockpit_enabled?
   end
 end

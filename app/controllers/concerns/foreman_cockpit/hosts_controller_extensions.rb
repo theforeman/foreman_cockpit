@@ -14,7 +14,8 @@ module ForemanCockpit
         find_resource
         suburl = ForemanCockpit::COCKPIT_SUBURL[action.to_sym]
         render :partial => 'foreman_cockpit/hosts/cockpit',
-               :locals => { :fqdn => @host.fqdn, :suburl => suburl }
+               :locals => { :fqdn => @host.fqdn, :suburl => suburl,
+                            :protocol => cockpit_protocol }
       end
     end
 
@@ -23,7 +24,7 @@ module ForemanCockpit
     def allow_cockpit_iframe
       response.headers['Content-Security-Policy'].
         sub!("frame-src 'self'",
-             "frame-src 'self' http://#{@host.fqdn}:9090")
+             "frame-src 'self' #{cockpit_protocol}://#{@host.fqdn}:9090")
     end
 
     def action_permission
@@ -33,6 +34,10 @@ module ForemanCockpit
       else
         super
       end
+    end
+
+    def cockpit_protocol
+      require_ssl? ? 'https' : 'http'
     end
   end
 end
