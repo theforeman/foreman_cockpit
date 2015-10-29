@@ -37,7 +37,7 @@ module ForemanCockpit
     end
 
     def cockpit_protocol
-      require_ssl? ? 'https' : 'http'
+      request.ssl? ? 'https' : 'http'
     end
   end
 end
