@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/theforeman/foreman_cockpit/badges/gpa.svg)](https://codeclimate.com/github/theforeman/foreman_cockpit)
+[![Gem Version](https://badge.fury.io/rb/foreman_cockpit.svg)](https://badge.fury.io/rb/foreman_cockpit)
 [![GPL License](https://img.shields.io/github/license/theforeman/foreman_cockpit.svg)](https://github.com/theforeman/foreman_cockpit/blob/master/LICENSE)
 
 # Foreman Cockpit :rocket:
@@ -23,9 +24,39 @@ Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://th
 
 ## Installation
 
-#### Packages on the making - please :star: it, watch it, and install from source for the moment.
+If you don't have the Foreman plugins repository set up, please follow the instructions in the manual:
 
-**TODO - Add to manual, package and release**
+* [Foreman: Plugin repo installation](http://theforeman.org/plugins/#2.2Packageinstallation)
+
+### Red Hat, CentOS, Scientific Linux (rpm)
+
+Set up the repo as explained in the link above, then on 1.10+ Foreman, run:
+
+    # yum install tfm-rubygem-foreman_cockpit
+
+or on 1.9 or lower:
+   
+    # yum install ruby193-rubygem-foreman_cockpit 
+    
+### Fedora (rpm)
+
+Set up the repo as explained in the link above, then run:
+
+    # yum install ruby-foreman-cockpit
+
+### Debian, Ubuntu (deb)
+
+Set up the repo as explained in the link above, then run
+
+    # apt-get install ruby-foreman-cockpit
+
+### Bundle (gem)
+
+Add the following to bundler.d/Gemfile.local.rb in your Foreman installation directory (/usr/share/foreman by default)
+
+    $ gem 'foreman_cockpit'
+
+Then run `bundle install` from the same directory
 
 ## Usage
 
