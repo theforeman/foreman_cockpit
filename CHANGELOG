@@ -1,4 +1,8 @@
+2015-11-02	Stephen Benjamin <stbenjam@redhat.com>
+	* Use the protocol in use to avoid mixed content warning
+
 2015-10-26	Daniel Lobato <elobatocs@gmail.com>
+	* Bump version to 1.0.2
 	* Allow https CSP headers
 	* Add legacy deface matcher for < 1.0
 
