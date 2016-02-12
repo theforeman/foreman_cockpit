@@ -7,12 +7,12 @@ module ForemanCockpit
                        services networking containers
                        storage accounts)
 
-  COCKPIT_SUBURL = { :system => 'shell/shell.html#/server',
+  COCKPIT_SUBURL = { :system => 'system/index.html',
                      :terminal => 'system/terminal.html',
-                     :journal => 'system/journal.html',
-                     :services => 'system/init.html',
-                     :networking => 'shell/shell.html#/networking',
-                     :containers => 'docker/containers.html',
-                     :storage => 'storage/devices.html',
-                     :accounts => 'shell/shell.html#/accounts' }
+                     :journal => 'system/logs.html',
+                     :services => 'system/services.html',
+                     :networking => 'network/index.html',
+                     :containers => 'docker/index.html',
+                     :storage => 'storage/index.html',
+                     :accounts => 'users/index.html' }
 end
