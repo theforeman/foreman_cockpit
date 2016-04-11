@@ -6,7 +6,7 @@ module ForemanCockpit
     included do
       def cockpit_enabled?
         return false unless fqdn.present? && os.present? &&
-                            %w(Fedora Redhat Archlinux Ubuntu).include?(os.type)
+                            %w(Redhat Archlinux Debian).include?(os.type)
         ping_cockpit_service
       end
 
