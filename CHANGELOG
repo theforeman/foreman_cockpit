@@ -1,3 +1,10 @@
+2016-04-11	Daniel Lobato <elobatocs@gmail.com>
+	* Fix tests to adapt to new list of families
+	* Update families to use Debian for Ubuntu and remove useless Fedora
+
+2016-04-10	Daniel Lobato <elobatocs@gmail.com>
+	* Bump version to 2.0.0
+
 2016-04-08	Dirk Goetz <dirk.goetz@netways.de>
 	* Cockpit URLs updated
 
