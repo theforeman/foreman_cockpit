@@ -13,7 +13,7 @@ class CockpitTest < ActiveSupport::TestCase
 
   context 'when host uses a cockpit-enabled OS' do
     setup do
-      @dummy_host.stubs(:os).returns(OpenStruct.new(:type => 'Fedora'))
+      @dummy_host.stubs(:os).returns(OpenStruct.new(:type => 'Redhat'))
     end
 
     test 'cockpit is enabled if cockpit ping is successful' do
@@ -37,7 +37,7 @@ class CockpitTest < ActiveSupport::TestCase
   end
 
   test 'cockpit is not displayed for incompatible OSs' do
-    @dummy_host.stubs(:os).returns(OpenStruct.new(:type => 'Debian'))
+    @dummy_host.stubs(:os).returns(OpenStruct.new(:type => 'Altlinux'))
     @dummy_host.stubs(:fqdn).returns('foo.bar')
     refute @dummy_host.cockpit_enabled?
   end
