@@ -1,19 +1,29 @@
-# foreman_cockpit
-#
-# This file is distributed under the same license as foreman_cockpit.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foreman_cockpit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: version 0.0.1\n"
+"Project-Id-Version: foreman_cockpit 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-08-20 08:46+0100\n"
-"PO-Revision-Date: 2014-08-20 08:46+0100\n"
-"Last-Translator: Foreman Team <foreman-dev@googlegroups.com>\n"
-"Language-Team: Foreman Team <foreman-dev@googlegroups.com>\n"
+"POT-Creation-Date: 2016-04-22 14:43-0400\n"
+"PO-Revision-Date: 2016-04-22 14:43-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: ../app/helpers/concerns/foreman_cockpit/hosts_helper_extensions.rb:23
+msgid "Cockpit"
+msgstr ""
+
+#: gemspec.rb:2
+msgid ""
+"This plugin adds a tab to see your host's Cockpit components, such as console,"
+" journal, and networking if the host has Cockpit installed."
+msgstr ""

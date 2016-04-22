@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "Use your hosts' Cockpit in Foreman."
   s.description = <<-DESCRIPTION
 This plugin adds a tab to see your host's Cockpit components, such as console,
-journal, networking.. if the host has Cockpit installed.
+journal, and networking if the host has Cockpit installed.
 DESCRIPTION
   s.licenses    = ['GPL-3']
 
