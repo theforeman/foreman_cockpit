@@ -22,7 +22,7 @@ module ForemanCockpit
           'cockpit' == JSON.parse(RestClient.get(cockpit_ping_url))['service']
         end
       rescue Timeout::Error, SocketError, Errno::ECONNREFUSED,
-             Errno::EHOSTUNREACH => e
+             Errno::EHOSTUNREACH, Errno::ECONNRESET => e
         logger.warn "Tried to contact Cockpit for host #{name} but failed: #{e}"
         logger.debug e.backtrace.join("\n")
         false
