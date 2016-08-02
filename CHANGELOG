@@ -1,4 +1,11 @@
+2016-05-26	Bryan Kearney <bkearney@redhat.com>
+	* Update the pot file so it is non empty
+
+2016-05-26	thomasmckay <thomasmckay@redhat.com>
+	* Adding Errno
+
 2016-04-11	Daniel Lobato <elobatocs@gmail.com>
+	* Bump version to 2.0.1
 	* Fix tests to adapt to new list of families
 	* Update families to use Debian for Ubuntu and remove useless Fedora
 

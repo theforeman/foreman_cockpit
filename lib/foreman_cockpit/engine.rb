@@ -19,7 +19,7 @@ module ForemanCockpit
     end
 
     initializer('foreman_cockpit.register_plugin',
-                :after => :finisher_hook) do
+                :before => :finisher_hook) do
       Foreman::Plugin.register :foreman_cockpit do
         requires_foreman '>= 1.7'
       end
