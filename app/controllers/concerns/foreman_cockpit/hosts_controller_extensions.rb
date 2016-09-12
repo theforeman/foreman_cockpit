@@ -4,7 +4,7 @@ module ForemanCockpit
     extend ActiveSupport::Concern
 
     included do
-      before_filter :allow_cockpit_iframe, :only => :show
+      before_action :allow_cockpit_iframe, :only => :show
     end
 
     ForemanCockpit::COCKPIT_ACTIONS.each do |action|
@@ -15,16 +15,14 @@ module ForemanCockpit
         suburl = ForemanCockpit::COCKPIT_SUBURL[action.to_sym]
         render :partial => 'foreman_cockpit/hosts/cockpit',
                :locals => { :fqdn => @host.fqdn, :suburl => suburl,
-                            :protocol => cockpit_protocol }
+                            :protocol => request.protocol }
       end
     end
 
     private
 
     def allow_cockpit_iframe
-      response.headers['Content-Security-Policy'].
-        sub!("frame-src 'self'",
-             "frame-src 'self' #{cockpit_protocol}://#{@host.fqdn}:9090")
+      append_content_security_policy_directives(child_src: ["#{request.protocol}#{@host.fqdn}:9090"])
     end
 
     def action_permission
@@ -34,10 +32,6 @@ module ForemanCockpit
       else
         super
       end
-    end
-
-    def cockpit_protocol
-      request.ssl? ? 'https' : 'http'
     end
   end
 end
