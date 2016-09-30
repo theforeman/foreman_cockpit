@@ -22,6 +22,14 @@ module ForemanCockpit
                 :before => :finisher_hook) do
       Foreman::Plugin.register :foreman_cockpit do
         requires_foreman '>= 1.7'
+
+        security_block :foreman_cockpit do
+          ForemanCockpit::COCKPIT_ACTIONS.each do |action|
+            permission :"view_cockpit_#{action.to_s}",
+              { :hosts => [action] },
+              :resource_type => 'Host'
+          end
+        end
       end
     end
 
