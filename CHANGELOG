@@ -1,3 +1,12 @@
+2016-09-30	Daniel Lobato Garcia <me@daniellobato.me>
+	* Add ForemanCockpit
+
+2016-09-30	Daniel Lobato <elobatocs@gmail.com>
+	* Release version 2.0.2
+
+2016-09-12	Tomer Brisker <tbrisker@users.noreply.github.com>
+	* Update secure headers handling (#9)
+
 2016-05-26	Bryan Kearney <bkearney@redhat.com>
 	* Update the pot file so it is non empty
 
