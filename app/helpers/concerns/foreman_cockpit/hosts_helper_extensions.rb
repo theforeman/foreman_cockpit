@@ -5,13 +5,15 @@ module ForemanCockpit
   module HostsHelperExtensions
     extend ActiveSupport::Concern
 
-    included do
-      alias_method_chain :host_title_actions, :cockpit
+    module Overrides
+      def host_title_actions(*args)
+        create_cockpit_bar if @host.cockpit_enabled?
+        super
+      end
     end
 
-    def host_title_actions_with_cockpit(*args)
-      create_cockpit_bar if @host.cockpit_enabled?
-      host_title_actions_without_cockpit(*args)
+    included do
+      prepend Overrides
     end
 
     private
