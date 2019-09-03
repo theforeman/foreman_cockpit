@@ -4,7 +4,7 @@
 
 # Foreman Cockpit :rocket:
 
-Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://theforeman.org) hosts.
+Display [Cockpit](http://cockpit-project.org/) components in [Foreman](http://theforeman.org) hosts. This plugin is **archived** because of the functionality being integrated into the [Remote Execution](https://theforeman.org/plugins/foreman_remote_execution/) plugin now.
 
 * Website: [theforeman.org](http://theforeman.org)
 * ServerFault tag: [Foreman](http://serverfault.com/questions/tagged/foreman)
